@@ -41,7 +41,7 @@ dag = DAG(
     'pascal',
     default_args=default_args,
     description='A DAG to generate and print Pascal\'s Triangle',
-    schedule_interval='45 10 * * *',  # Запуск ежедневно в 12:45 по москве
+    schedule_interval='45 10 * * *',  # Запуск ежедневно в 12:45 по москве.
     catchup=False,
 )
 
