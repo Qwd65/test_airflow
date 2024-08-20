@@ -55,7 +55,7 @@ task_id='dummy_task',
 retries=3,
 dag=dag,
 )
-generate_and_print_task
+
 
 
 
