@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.operators.bash_operator import BashOperator
 from airflow.utils.dates import days_ago
 from airflow.utils.dates import timedelta
 from datetime import datetime
@@ -50,12 +51,11 @@ generate_and_print_task = PythonOperator(
     dag=dag,
 )
 
-dummy_task = EmptyOperator(
-task_id='dummy_task',
-retries=3,
-dag=dag,
+bash_task = BashOperator(
+    task_id='bash_task',
+    bash_command='echo "Hello from BashOperator"',
+    dag=dag,
 )
-
 
 
 
